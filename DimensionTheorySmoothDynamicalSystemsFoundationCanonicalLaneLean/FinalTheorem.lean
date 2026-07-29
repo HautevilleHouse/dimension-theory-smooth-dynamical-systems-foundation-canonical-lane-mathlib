@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DimensionTheorySmoothDynamicalSystemsFoundationCanonicalLaneLean.SmoothDynamicalSystem
+import HautevilleHouse.DimensionTheorySmoothDynamicalSystemsFoundationCanonicalLaneLean.InvariantMeasure
+import HautevilleHouse.DimensionTheorySmoothDynamicalSystemsFoundationCanonicalLaneLean.LyapunovExponents
+import HautevilleHouse.DimensionTheorySmoothDynamicalSystemsFoundationCanonicalLaneLean.HausdorffDimension
+import HautevilleHouse.DimensionTheorySmoothDynamicalSystemsFoundationCanonicalLaneLean.EntropyPesin
+import HautevilleHouse.DimensionTheorySmoothDynamicalSystemsFoundationCanonicalLaneLean.PesinTheory
+
+namespace HautevilleHouse
+namespace DimensionTheorySmoothDynamicalSystemsFoundationCanonicalLaneLean
+
+def ConstrainedDimensionSmoothDynamicalSystemsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_dimension_smooth_dynamical_systems_endgame (A : AdmissibleClass) :
+    ConstrainedDimensionSmoothDynamicalSystemsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DimensionTheorySmoothDynamicalSystemsFoundationCanonicalLaneLean
+end HautevilleHouse
